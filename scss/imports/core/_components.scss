@@ -1,0 +1,94 @@
+section {
+  height: 100vh;
+  // @include mid(true);
+  .title-sub {
+    @include subTitle(true);
+  }
+}
+.centerFlexColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.centerFlexRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cursor {
+  position: fixed;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: $white-cl;
+  mix-blend-mode: difference;
+  transition: 0.5s;
+  transition: $t cubic-bezier(0.44, 0.15, 0, 1.54) width,
+    $t cubic-bezier(0.44, 0.15, 0, 1.54) height, $t opacity, $t background;
+  transition-timing-function: ease-in-out;
+  user-select: none;
+  pointer-events: none;
+  background: #fff;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  border-radius: 50%;
+  background-clip: padding-box;
+  z-index: 1000000;
+  .swipe {
+    visibility: hidden;
+    opacity: 0;
+    transition: $t;
+  }
+  .active-swipe {
+    visibility: visible;
+    opacity: 1;
+    transition: $t;
+    color: $white-cl;
+    font-family: ITBOLD;
+    font-size: 14px;
+  }
+  &.hover-logo {
+    width: 70px;
+    height: 70px;
+    transition: 0.3s cubic-bezier(0.44, 0.15, 0, 1.54) width,
+      0.3s cubic-bezier(0.44, 0.15, 0, 1.54) height, 0.3s opacity,
+      0.3s background;
+    transition-timing-function: ease-in-out;
+  }
+  &.hover-info {
+    width: 120px;
+    height: 120px;
+    mix-blend-mode: normal;
+    background-color: transparent;
+    border: 1px solid $white-cl;
+    transition: 0.3s cubic-bezier(0.44, 0.15, 0, 1.54) width,
+      0.3s cubic-bezier(0.44, 0.15, 0, 1.54) height, 0.3s opacity,
+      0.3s background;
+    transition-timing-function: ease-in-out;
+  }
+  &.hover-email {
+    width: 120px;
+    height: 120px;
+    transition: 0.3s cubic-bezier(0.44, 0.15, 0, 1.54) width,
+      0.3s cubic-bezier(0.44, 0.15, 0, 1.54) height, 0.3s opacity,
+      0.3s background;
+    transition-timing-function: ease-in-out;
+  }
+  &.hover-menu {
+    width: 80px;
+    height: 80px;
+    transition: 0.3s cubic-bezier(0.44, 0.15, 0, 1.54) width,
+      0.3s cubic-bezier(0.44, 0.15, 0, 1.54) height, 0.3s opacity,
+      0.3s background;
+    transition-timing-function: ease-in-out;
+  }
+}

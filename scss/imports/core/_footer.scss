@@ -1,0 +1,47 @@
+// css footer
+@include xxs {
+}
+footer {
+  justify-content: space-between !important;
+  padding-top: 50px !important;
+  padding-bottom: 50px !important;
+  p {
+    @include text(18px, ITREGULAR, normal, $black-cl, none);
+    line-height: 30px;
+  }
+  .footer {
+    &-middle {
+      a {
+        cursor: none;
+        color: $black-cl;
+        text-decoration: none;
+        position: relative;
+        overflow: hidden;
+        line-height: 30px;
+        &::before {
+          content: "";
+          position: absolute;
+          height: 1px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: $black-cl;
+          transform: translateX(-100%);
+          @include transition(.3s cubic-bezier(0.65, 0.05, 0.36, 1) 0.2s);
+        }
+        &:hover {
+          &::before {
+            transform: translateX(0);
+            @include transition(.3s cubic-bezier(0.65, 0.05, 0.36, 1) 0.2s);
+          }
+        }
+      }
+      span {
+        margin-right: 8px;
+      }
+    }
+    &-right {
+      text-align: right;
+    }
+  }
+}

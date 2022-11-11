@@ -1,0 +1,34 @@
+// css header
+header {
+  width: calc(100vw / 12 * 10) !important;
+  height: 80px;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  @include text(16px, ITBOLD, normal, $black-cl, none);
+  border-bottom: 1px solid $white-heavy-cl;
+  background-color: $white-cl !important;
+  transition-delay: .4s;
+  transition-duration: $t;
+  .logo {
+    cursor: none;
+  }
+  .contact {
+    cursor: none;
+  }
+  z-index: 1000;
+}
+.activeHeader {
+  height: 100vh;
+  background-color: $white-heavy-cl !important;
+  @include text(16px, ITBOLD, normal, $white-cl, none);
+  transition-delay: 0ms;
+  transition-duration: $t;
+}
+@include xs {
+}
+@include md {
+}

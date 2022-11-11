@@ -1,0 +1,118 @@
+// css navigator (button)
+.navbar {
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  border-left: 1px solid $white-heavy-cl;
+  @include transition($t cubic-bezier(0.65, 0.05, 0.36, 1));
+  background-color: $white-cl;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    top: 50%;
+    transform: translate(0%, -50%);
+    @include transition($t);
+    &-child {
+      cursor: none;
+      margin-bottom: 40px;
+      a {
+        cursor: none;
+        text-decoration: none;
+        opacity: 0.5;
+        @include transition($t);
+        @include text(60px, ITBOLD, normal, $black-cl, none);
+        &:hover {
+          opacity: 1;
+          @include transition($t);
+          text-shadow: 0px 24px 79px -31px rgba(0, 0, 0, 0.41);
+          -webkit-text-shadow: 0px 24px 79px -31px rgba(0, 0, 0, 0.41);
+          -moz-text-shadow: 0px 24px 79px -31px rgba(0, 0, 0, 0.41);
+        }
+      }
+      .active-menu {
+        opacity: 1;
+        @include transition($t);
+        text-shadow: 0px 24px 79px -31px rgba(0, 0, 0, 0.41);
+        -webkit-text-shadow: 0px 24px 79px -31px rgba(0, 0, 0, 0.41);
+        -moz-text-shadow: 0px 24px 79px -31px rgba(0, 0, 0, 0.41);
+      }
+      &:nth-child(3) {
+        margin-bottom: 0px;
+      }
+    }
+  }
+  .button {
+    cursor: none;
+    @include transition($t);
+    .hamburger {
+      width: 40px;
+      height: 40px;
+      cursor: none;
+      position: relative;
+      overflow: hidden;
+      span {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 3.5px;
+        background-color: $black-cl;
+        border-radius: 3px;
+        @include transition($t);
+        &:nth-child(1) {
+          top: 10px;
+        }
+        &:nth-child(2) {
+          top: 18px;
+          opacity: 1;
+        }
+        &:nth-child(3) {
+          bottom: 10px;
+        }
+      }
+    }
+    .title {
+      cursor: none;
+      letter-spacing: -0.03em;
+      @include text(16px, ITBOLD, 24px, $black-cl, none);
+    }
+  }
+}
+.active {
+  width: 100%;
+  max-width: 100vw;
+  @include transition(max-width $t cubic-bezier(0.65, 0.05, 0.36, 1) 0.2s);
+  .menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    transition-delay: 0.8s;
+  }
+  .button {
+    margin-left: 40%;
+    .hamburger {
+      span {
+        &:nth-child(1) {
+          top: 20px;
+          transform: rotate(45deg);
+        }
+        &:nth-child(2) {
+          top: 18px;
+          transform: translateX(-100px);
+          opacity: 0;
+        }
+        &:nth-child(3) {
+          bottom: 16px;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+}
