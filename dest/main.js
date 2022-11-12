@@ -1,5 +1,4 @@
-// const body = $("body");
-const body = document.body;
+const body = $("body");
 $(document).ready(function () {
   $(".button").on("click", function () {
     $(".navbar").toggleClass("active");
