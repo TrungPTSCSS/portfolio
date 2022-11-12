@@ -214,7 +214,7 @@ body {
       }
     }
   }
-  .information {
+  .profile {
     position: fixed;
     background-color: $black-cl;
     width: 100vw;
@@ -257,7 +257,7 @@ body {
     transform: translateY(0%);
     opacity: 1;
     @include transition($t cubic-bezier(0.41, 0.16, 0.64, 0.92) 0.05s);
-    .information {
+    .profile {
       &-content {
         p {
           opacity: 1;

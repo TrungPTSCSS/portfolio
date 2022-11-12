@@ -62,13 +62,13 @@ function hoverElement() {
 hoverElement();
 var activeInfo = $(".info .image");
 activeInfo.on("click", function () {
-  $(".information").addClass("activeInfo");
+  $(".profile").addClass("activeInfo");
   body.addClass("disableScroll");
 });
 //escape
 $(document).keyup(function (e) {
   if (e.key === "Escape") {
-    $(".information").removeClass("activeInfo");
+    $(".profile").removeClass("activeInfo");
     body.removeClass("disableScroll");
   }
 });
