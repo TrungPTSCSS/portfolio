@@ -225,7 +225,7 @@ body {
     transform: translateY(100%);
     opacity: 0;
     @include transition($t cubic-bezier(0.41, 0.16, 0.64, 0.92) 0.05s);
-    transition-delay: .3s;
+    transition-delay: 0.3s;
     &-content {
       overflow-y: scroll;
       p {
