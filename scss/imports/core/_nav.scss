@@ -6,7 +6,7 @@
   border-left: 1px solid $white-heavy-cl;
   @include transition($t cubic-bezier(0.65, 0.05, 0.36, 1));
   background-color: $white-cl;
-  z-index: 1001;
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: center;

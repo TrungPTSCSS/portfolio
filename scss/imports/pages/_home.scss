@@ -214,4 +214,63 @@ body {
       }
     }
   }
+  .information {
+    position: fixed;
+    background-color: $black-cl;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    transform: translateY(100%);
+    opacity: 0;
+    @include transition($t cubic-bezier(0.41, 0.16, 0.64, 0.92) 0.05s);
+    transition-delay: .3s;
+    &-content {
+      overflow-y: scroll;
+      p {
+        opacity: 0;
+        transform: translateX(100%);
+        padding-bottom: 10px;
+        @include text(16px, ITREGULAR, normal, $white-cl, none);
+        transition: $t;
+      }
+    }
+    .history {
+      height: 100vh;
+      padding: 100px 0;
+      overflow: hidden;
+      flex-wrap: nowrap;
+    }
+    .avatar {
+      opacity: 0;
+      transform: translateX(-100%);
+      @include transition($t);
+      img {
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .activeInfo {
+    transform: translateY(0%);
+    opacity: 1;
+    @include transition($t cubic-bezier(0.41, 0.16, 0.64, 0.92) 0.05s);
+    .information {
+      &-content {
+        p {
+          opacity: 1;
+          transform: translateX(0%);
+          transition-delay: $t;
+        }
+      }
+    }
+    .avatar {
+      opacity: 1;
+      transform: translateX(0%);
+      @include transition($t);
+      transition-delay: $t;
+    }
+  }
 }

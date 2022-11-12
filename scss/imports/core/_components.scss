@@ -92,3 +92,6 @@ section {
     transition-timing-function: ease-in-out;
   }
 }
+.disableScroll {
+  position: fixed;
+}

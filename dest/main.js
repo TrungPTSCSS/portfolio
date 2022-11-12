@@ -1,3 +1,5 @@
+// const body = $("body");
+const body = document.body;
 $(document).ready(function () {
   $(".button").on("click", function () {
     $(".navbar").toggleClass("active");
@@ -5,8 +7,10 @@ $(document).ready(function () {
     const buttonName = $(".navbar .title")[0];
     if ($(".navbar").hasClass("active")) {
       buttonName.innerHTML = "Close";
+      body.addClass("disableScroll");
     } else {
       buttonName.innerHTML = "Menu";
+      body.removeClass("disableScroll");
     }
   });
 });
@@ -56,6 +60,19 @@ function hoverElement() {
   });
 }
 hoverElement();
+var activeInfo = $(".info .image");
+activeInfo.on("click", function () {
+  $(".information").addClass("activeInfo");
+  body.addClass("disableScroll");
+});
+//escape
+$(document).keyup(function (e) {
+  if (e.key === "Escape") {
+    $(".information").removeClass("activeInfo");
+    body.removeClass("disableScroll");
+  }
+});
+
 // setTimeout(() => {
 //   // Wrap every letter in a span
 //   var textWrapper = document.querySelector(".hello .letters");
