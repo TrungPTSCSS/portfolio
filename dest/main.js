@@ -13,52 +13,52 @@ $(document).ready(function () {
     }
   });
 });
-let cursor = document.querySelector(".cursor");
-document.addEventListener("mousemove", (e) => {
-  cursor.setAttribute(
-    "style",
-    "top: " + (e.screenY - 125) + "px; left:" + e.screenX + "px;"
-  );
-});
-function hoverElement() {
-  var cursor = $(".cursor");
-  var logo = $(".logo");
-  var image = $(".image");
-  var swipe = $(".cursor .swipe");
-  var email = $(".email");
-  var nav = $(".button");
-  //logo
-  logo.mouseover(function () {
-    cursor.addClass("hover-logo");
-  });
-  logo.mouseout(function () {
-    cursor.removeClass("hover-logo");
-  });
-  //image
-  image.mouseover(function () {
-    cursor.addClass("hover-info");
-    swipe.addClass("active-swipe");
-  });
-  image.mouseout(function () {
-    cursor.removeClass("hover-info");
-    swipe.removeClass("active-swipe");
-  });
-  //email
-  email.mouseover(function () {
-    cursor.addClass("hover-email");
-  });
-  email.mouseout(function () {
-    cursor.removeClass("hover-email");
-  });
-  //nav
-  nav.mouseover(function () {
-    cursor.addClass("hover-menu");
-  });
-  nav.mouseout(function () {
-    cursor.removeClass("hover-menu");
-  });
-}
-hoverElement();
+// let cursor = document.querySelector(".cursor");
+// document.addEventListener("mousemove", (e) => {
+//   cursor.setAttribute(
+//     "style",
+//     "top: " + (e.screenY - 125) + "px; left:" + e.screenX + "px;"
+//   );
+// });
+// function hoverElement() {
+//   var cursor = $(".cursor");
+//   var logo = $(".logo");
+//   var image = $(".image");
+//   var swipe = $(".cursor .swipe");
+//   var email = $(".email");
+//   var nav = $(".button");
+//   //logo
+//   logo.mouseover(function () {
+//     cursor.addClass("hover-logo");
+//   });
+//   logo.mouseout(function () {
+//     cursor.removeClass("hover-logo");
+//   });
+//   //image
+//   image.mouseover(function () {
+//     cursor.addClass("hover-info");
+//     swipe.addClass("active-swipe");
+//   });
+//   image.mouseout(function () {
+//     cursor.removeClass("hover-info");
+//     swipe.removeClass("active-swipe");
+//   });
+//   //email
+//   email.mouseover(function () {
+//     cursor.addClass("hover-email");
+//   });
+//   email.mouseout(function () {
+//     cursor.removeClass("hover-email");
+//   });
+//   //nav
+//   nav.mouseover(function () {
+//     cursor.addClass("hover-menu");
+//   });
+//   nav.mouseout(function () {
+//     cursor.removeClass("hover-menu");
+//   });
+// }
+// hoverElement();
 var activeInfo = $(".info .image");
 activeInfo.on("click", function () {
   $(".profile").addClass("activeInfo");
@@ -117,3 +117,41 @@ $(document).keyup(function (e) {
 //     delay: (el, i) => 50 * i,
 //   });
 // }, 500);
+
+//cusor
+let cursor = document.querySelector(".cursor");
+let cursorScale = document.querySelectorAll(".cursor-scale");
+let mouseX = 0;
+let mouseY = 0;
+
+gsap.to({}, 0.016, {
+  repeat: -1,
+  onRepeat: function () {
+    gsap.set(cursor, {
+      css: {
+        left: mouseX,
+        top: mouseY,
+      },
+    });
+  },
+});
+
+window.addEventListener("mousemove", (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+
+cursorScale.forEach((link) => {
+  link.addEventListener("mousemove", () => {
+    cursor.classList.add("grow");
+    if (link.classList.contains("small")) {
+      cursor.classList.remove("grow");
+      cursor.classList.add("grow-small");
+    }
+  });
+
+  link.addEventListener("mouseleave", () => {
+    cursor.classList.remove("grow");
+    cursor.classList.remove("grow-small");
+  });
+});
