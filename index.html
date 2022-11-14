@@ -29,15 +29,17 @@
 </head>
 
 <body>
-  <div class="cursor"></div>
+  <div class="cursor">
+    <div class="more">More</div>
+  </div>
   <div class="grid">
     <div class="col-10 main-body">
       <header class="container-fluid grid header">
         <div class="logo cursor-scale small">
-          <p>TrungPham</p>
+          <a href="#info">TrungPham</a>
         </div>
         <div class="contact cursor-scale small">
-          <p>Contact</p>
+          <a href="#contact">Contact</a>
         </div>
       </header>
       <main>
@@ -60,13 +62,13 @@
                 </span>
               </div>
               <div class="introduce">
-                <p>I am 22 years old this year and have 2 years of experience working in Frontend Developer position.
+                <p>I am 22 years old and have 2 years of experience working in Frontend Developer position.
                   Currently, I am working at Cybozu VietNam company with the position of Software Developer.
                 </p>
               </div>
             </div>
             <div class="col-md-5">
-              <div class="image">
+              <div class="image cursor-scale">
                 <img src="./assets/img/avt.jpg" alt="">
               </div>
             </div>
@@ -222,10 +224,11 @@
               </div>
             </div>
           </section>
-          <section class="contactSection centerFlexRow">
+          <section class="contactSection centerFlexRow" id="contact">
             <div class="content">
               <p>SEND A MESSAGE</p>
               <P class="email cursor-scale">TRUNG08052000@GMAIL.COM</P>
+              <P class="phone cursor-scale small">+84 344.153.437</P>
             </div>
           </section>
         </div>
@@ -246,9 +249,9 @@
     </div>
     <div class="col-2 navbar">
       <ul class="menu">
-        <li class="menu-child"><a class="active-menu" href="">Home</a></li>
-        <li class="menu-child"><a href="">Project</a></li>
-        <li class="menu-child"><a href="">Contact</a></li>
+        <li class="menu-child"><a class="active-menu cursor-scale small" href="#info">Home</a></li>
+        <li class="menu-child"><a class="cursor-scale small" href="#project">Project</a></li>
+        <li class="menu-child"><a class="cursor-scale small" href="#contact">Contact</a></li>
       </ul>
       <div class="button centerFlexColumn cursor-scale small">
         <div class="hamburger">

@@ -84,7 +84,7 @@ body {
           }
         }
         &_child {
-          padding-top: 20px;
+          padding-top: 40px;
           .img {
             height: 100vh;
             overflow: hidden;
@@ -196,7 +196,7 @@ body {
               width: 100%;
               height: 5px;
               background-color: $black-cl;
-              transform: translateX(-100%);
+              transform: translateX(-101%);
               @include transition(0.3s cubic-bezier(0.65, 0.05, 0.36, 1) 0.2s);
             }
             &:hover {
@@ -208,6 +208,14 @@ body {
                   0.3s cubic-bezier(0.65, 0.05, 0.36, 1) 0.2s
                 );
               }
+            }
+          }
+          .phone {
+            margin-top: 20px;
+            @include text(18px, ITBOLD, 20px, $black-cl, none);
+            @include transition($t);
+            &:hover{
+              font-size: 22px;
             }
           }
         }

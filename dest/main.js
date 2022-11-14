@@ -120,6 +120,7 @@ $(document).keyup(function (e) {
 
 //cusor
 let cursor = document.querySelector(".cursor");
+let more = document.querySelector(".cursor .more");
 let cursorScale = document.querySelectorAll(".cursor-scale");
 let mouseX = 0;
 let mouseY = 0;
@@ -137,8 +138,8 @@ gsap.to({}, 0.016, {
 });
 
 window.addEventListener("mousemove", (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
+  mouseX = e.clientX + 10;
+  mouseY = e.clientY + 10;
 });
 
 cursorScale.forEach((link) => {
@@ -148,10 +149,14 @@ cursorScale.forEach((link) => {
       cursor.classList.remove("grow");
       cursor.classList.add("grow-small");
     }
+    if (link.classList.contains("image")) {
+      more.classList.add("activeMore");
+    }
   });
 
   link.addEventListener("mouseleave", () => {
     cursor.classList.remove("grow");
     cursor.classList.remove("grow-small");
+    more.classList.remove("activeMore");
   });
 });

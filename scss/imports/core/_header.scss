@@ -11,13 +11,21 @@ header {
   @include text(16px, ITBOLD, normal, $black-cl, none);
   border-bottom: 1px solid $white-heavy-cl;
   background-color: $white-cl !important;
-  transition-delay: .4s;
+  transition-delay: 0.4s;
   transition-duration: $t;
   .logo {
-    cursor: none;
+    a {
+      cursor: none;
+      text-decoration: none;
+      color: $black-cl;
+    }
   }
   .contact {
-    cursor: none;
+    a {
+      cursor: none;
+      text-decoration: none;
+      color: $black-cl;
+    }
   }
   z-index: 99;
 }

@@ -6,8 +6,7 @@ footer {
   padding-top: 50px !important;
   padding-bottom: 50px !important;
   p {
-    @include text(18px, ITREGULAR, normal, $black-cl, none);
-    line-height: 30px;
+    @include text(16px, ITREGULAR, 30px, $black-cl, none);
   }
   .footer {
     &-middle {
@@ -17,7 +16,7 @@ footer {
         text-decoration: none;
         position: relative;
         overflow: hidden;
-        line-height: 30px;
+        @include text(16px, ITREGULAR, 30px, $black-cl, none);
         &::before {
           content: "";
           position: absolute;
@@ -27,12 +26,12 @@ footer {
           bottom: 0;
           background-color: $black-cl;
           transform: translateX(-100%);
-          @include transition(.3s cubic-bezier(0.65, 0.05, 0.36, 1) 0.2s);
+          @include transition(0.3s cubic-bezier(0.65, 0.05, 0.36, 1) 0.2s);
         }
         &:hover {
           &::before {
             transform: translateX(0);
-            @include transition(.3s cubic-bezier(0.65, 0.05, 0.36, 1) 0.2s);
+            @include transition(0.3s cubic-bezier(0.65, 0.05, 0.36, 1) 0.2s);
           }
         }
       }
