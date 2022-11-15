@@ -99,8 +99,7 @@ body {
         }
       }
       .project {
-        background-color: #f8f8f8;
-        height: unset;
+        height: max-content;
         .recent {
           text-align: right;
           @include text(25px, ITBOLD, normal, unset, none);
