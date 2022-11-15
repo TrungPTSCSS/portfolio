@@ -31,7 +31,7 @@ header {
 }
 .activeHeader {
   height: 100vh;
-  background-color: $white-heavy-cl !important;
+  background-color: $black-cl !important;
   @include text(16px, ITBOLD, normal, $white-cl, none);
   transition-delay: 0ms;
   transition-duration: $t;

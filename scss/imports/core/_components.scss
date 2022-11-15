@@ -48,6 +48,15 @@ section {
 
 .grow,
 .grow-small {
+  width: 150px;
+  height: 150px;
+  margin-left: -80px;
+  margin-top: -80px;
+  transform-origin: center center;
+  @include transition(0.2s ease);
+}
+
+.grow-small {
   width: 100px;
   height: 100px;
   margin-left: -60px;
@@ -56,15 +65,7 @@ section {
   @include transition(0.2s ease);
 }
 
-.grow-small {
-  width: 80px;
-  height: 80px;
-  margin-left: -50px;
-  margin-top: -50px;
-  transform-origin: center center;
-  @include transition(0.2s ease);
-}
-
 .disableScroll {
-  position: fixed;
+  height: 100%;
+  overflow-y: hidden;
 }
