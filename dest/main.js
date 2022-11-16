@@ -1,3 +1,4 @@
+AOS.init();
 Splitting();
 const body = $("body");
 const main = $(".container");
@@ -34,6 +35,14 @@ $(document).ready(function () {
     body.removeClass("disableScroll");
   });
 
+  window.addEventListener("scroll", function () {
+    var scrollHeight = document.documentElement.scrollTop;
+    if (scrollHeight > window.innerHeight * 7) {
+      //add class animation signature
+      let sign = document.querySelector(".signature svg path");
+      sign.classList.add("animation-text");
+    }
+  });
   //cusor Gsap
   let cursor = document.querySelector(".cursor");
   let more = document.querySelector(".cursor .more");
@@ -77,5 +86,3 @@ $(document).ready(function () {
     });
   });
 });
-AOS.init();
-

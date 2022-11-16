@@ -11,3 +11,11 @@
     @include transition($t);
   }
 }
+@keyframes signature {
+  from {
+    stroke-dashoffset: 1898.2451171875px;
+  }
+  to {
+    stroke-dashoffset: 0px;
+  }
+}
