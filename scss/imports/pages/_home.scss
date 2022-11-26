@@ -289,8 +289,7 @@ body {
     top: 0;
     z-index: 1000;
     transform: translateY(100%);
-    opacity: 0;
-    @include transition($t cubic-bezier(0.41, 0.16, 0.64, 0.92) 0.05s);
+    @include transition(0.4s cubic-bezier(.5,.29,.4,.55));
     transition-delay: 1s;
     &-content {
       overflow-y: scroll;
@@ -386,8 +385,7 @@ body {
   }
   .activeInfo {
     transform: translateY(0%);
-    opacity: 1;
-    @include transition($t cubic-bezier(0.41, 0.16, 0.64, 0.92) 0.05s);
+    @include transition(0.4s cubic-bezier(.5,.29,.4,.55));
     .profile {
       &-content {
         p {

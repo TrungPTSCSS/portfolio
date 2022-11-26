@@ -74,7 +74,7 @@ $(document).ready(function () {
         cursor.classList.remove("grow");
         cursor.classList.add("grow-small");
       }
-      if (link.classList.contains("image")) {
+      if (link.classList.contains("showMore")) {
         more.classList.add("activeMore");
       }
     });
