@@ -85,4 +85,15 @@ $(document).ready(function () {
       more.classList.remove("activeMore");
     });
   });
+
+  var parent = $(".content").get();
+    var all = parent[0].children;
+
+    for (let i = 0; i < all.length; i++) {
+      all[i].addEventListener("click", function () {
+        console.log("====================================");
+        console.log(i);
+        console.log("====================================");
+      });
+    }
 });
