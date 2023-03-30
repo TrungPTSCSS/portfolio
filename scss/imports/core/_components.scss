@@ -1,21 +1,25 @@
 section {
   height: 100vh;
+
   // @include mid(true);
   .title-sub {
     @include subTitle(true);
   }
 }
+
 .centerFlexColumn {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 .centerFlexRow {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 // custom cursor style
 .cursor {
   position: fixed;
@@ -29,7 +33,9 @@ section {
   pointer-events: none;
   z-index: 10000;
   transform-origin: center center;
-  @include transition(0.1s ease);
+  transition:all 0.05s, width 0.2s, height 0.2s, margin 0.2s;
+  transition-timing-function: linear;
+
   .more {
     opacity: 0;
     position: absolute;
@@ -40,6 +46,7 @@ section {
     mix-blend-mode: difference;
     @include transition(0.2s);
   }
+
   .activeMore {
     opacity: 1;
     @include transition(0.2s);
@@ -52,8 +59,6 @@ section {
   height: 150px;
   margin-left: -80px;
   margin-top: -80px;
-  transform-origin: center center;
-  @include transition(0.2s ease);
 }
 
 .grow-small {
@@ -61,8 +66,6 @@ section {
   height: 100px;
   margin-left: -60px;
   margin-top: -60px;
-  transform-origin: center center;
-  @include transition(0.2s ease);
 }
 
 .disableScroll {

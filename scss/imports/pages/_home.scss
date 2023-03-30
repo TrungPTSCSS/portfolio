@@ -4,6 +4,7 @@ body {
     display: flex;
     background-color: #f8f8f8;
     .main-body {
+      width: calc(100vw - 245px);
       .container {
         transform: translateY(0);
         @include transition(1s);
@@ -142,12 +143,14 @@ body {
             .decrip {
               @include text(16px, ITREGULAR, normal, $black-cl, none);
               margin-top: 10px;
+              width: fit-content;
             }
             .viewMore {
               justify-content: flex-start;
               cursor: none;
               @include text(16px, ITBOLD, normal, $black-cl, none);
               margin-top: 20px;
+              width: fit-content;
               &_arrow {
                 width: 60px;
                 height: 60px;
@@ -163,6 +166,7 @@ body {
           }
           .reverse {
             text-align: right;
+            align-items: flex-end;
             .viewMore {
               justify-content: flex-end;
             }
@@ -292,7 +296,6 @@ body {
     @include transition(0.4s cubic-bezier(.5,.29,.4,.55));
     transition-delay: 1s;
     &-content {
-      overflow-y: scroll;
       p {
         opacity: 0;
         transform: translateX(100%);
@@ -401,6 +404,17 @@ body {
         transform: translateX(0%);
         @include transition($t);
         transition-delay: $t;
+        position: relative;
+        &::before{
+          position: absolute;
+          content: '';
+          background: linear-gradient(270deg, #000000 0%, rgba(0, 0, 0, 0) 48.96%);
+          z-index: 1;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+        }
       }
       .button {
         position: absolute;
