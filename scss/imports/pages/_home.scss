@@ -15,13 +15,13 @@ body {
         &_title {
           margin-top: 20px;
           &-sub {
-            @include text(40px, ITBOLD, normal, $black-cl, uppercase);
+            @include text(2vw, ITBOLD, normal, $black-cl, uppercase);
             letter-spacing: -0.05rem;
           }
           &-main {
             overflow: hidden;
             padding-right: 20px;
-            @include text(125px, ITBLACK, normal, $black-cl, uppercase);
+            @include text(8vw, ITBLACK, normal, $black-cl, uppercase);
             position: relative;
             &::before {
               position: absolute;
@@ -104,7 +104,11 @@ body {
         height: max-content;
         .recent {
           text-align: right;
+          margin: 20px 0 0;
           @include text(25px, ITBOLD, normal, unset, none);
+        }
+        .recent-reverse{
+          text-align: left;
         }
         .reverse {
           .img span {
@@ -138,10 +142,10 @@ body {
             flex-direction: column;
             justify-content: center;
             .title {
-              @include text(80px, ITBOLD, normal, $black-cl, none);
+              @include text(6vw, ITBOLD, normal, $black-cl, none);
             }
             .decrip {
-              @include text(16px, ITREGULAR, normal, $black-cl, none);
+              @include text(18px, ITREGULAR, normal, $black-cl, none);
               margin-top: 10px;
               width: fit-content;
             }
@@ -347,6 +351,16 @@ body {
           min-height: 100%;
           object-fit: cover;
         }
+        &::before{
+          position: absolute;
+          content: '';
+          background: linear-gradient(270deg, #000000 0%, rgba(0, 0, 0, 0) 48.96%);
+          z-index: 1;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+        }
       }
       .button {
         position: absolute;
@@ -408,16 +422,6 @@ body {
         @include transition($t);
         transition-delay: $t;
         position: relative;
-        &::before{
-          position: absolute;
-          content: '';
-          background: linear-gradient(270deg, #000000 0%, rgba(0, 0, 0, 0) 48.96%);
-          z-index: 1;
-          width: 100%;
-          height: 100%;
-          top: 0;
-          left: 0;
-        }
       }
       .button {
         position: absolute;

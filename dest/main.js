@@ -16,6 +16,18 @@ $(document).ready(function () {
       main.removeClass('disableScroll');
     }
   });
+  $('.navbar .menu .menu-child').on('click', function (e) {
+    main.removeClass('disableScroll');
+    $('.navbar').removeClass('active');
+    $('.header').removeClass('activeHeader');
+    const buttonName = $('.navbar .title')[0];
+    buttonName.innerHTML = 'Menu';
+    const currentMenu = e.target;
+    console.log(currentMenu);
+    const menu = $('.navbar .menu .menu-child a');
+    menu.removeClass('active-menu');
+    currentMenu.classList.add('active-menu');
+  });
   //open information
   var activeInfo = $('.introduce .introduce_title-about');
   activeInfo.on('click', function () {
@@ -41,6 +53,12 @@ $(document).ready(function () {
       //add class animation signature
       let sign = document.querySelector('.signature svg path');
       sign.classList.add('animation-text');
+    } else if (window.innerWidth < 768) {
+      if (scrollHeight > window.innerHeight * 6) {
+        //add class animation signature
+        let sign = document.querySelector('.signature svg path');
+        sign.classList.add('animation-text');
+      }
     }
   });
   //cusor Gsap
