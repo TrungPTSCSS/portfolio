@@ -53,12 +53,6 @@ $(document).ready(function () {
       //add class animation signature
       let sign = document.querySelector('.signature svg path');
       sign.classList.add('animation-text');
-    } else if (window.innerWidth < 768) {
-      if (scrollHeight > window.innerHeight * 6) {
-        //add class animation signature
-        let sign = document.querySelector('.signature svg path');
-        sign.classList.add('animation-text');
-      }
     }
   });
   //cusor Gsap
