@@ -233,6 +233,7 @@ body {
             @include text(50px, ITBLACK, normal, $black-cl, none);
             position: relative;
             overflow: hidden;
+            transform: scale(1);
             @include transition($t);
             &::before {
               position: absolute;
@@ -245,7 +246,7 @@ body {
               @include transition(0.3s cubic-bezier(0.65, 0.05, 0.36, 1) 0.2s);
             }
             &:hover {
-              font-size: 60px;
+              transform: scale(1.2);
               &::before {
                 transform: translateX(0%);
                 @include transition(
@@ -256,8 +257,10 @@ body {
           }
           .phone {
             margin-top: 20px;
+            text-decoration: none;
             @include text(18px, ITBOLD, 20px, $black-cl, none);
             @include transition($t);
+            cursor: none;
             &:hover {
               font-size: 22px;
             }
