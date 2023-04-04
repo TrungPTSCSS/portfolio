@@ -142,6 +142,7 @@ body {
             flex-direction: column;
             justify-content: center;
             .title {
+              cursor: none;
               @include text(6vw, ITBOLD, normal, $black-cl, none);
             }
             .decrip {
