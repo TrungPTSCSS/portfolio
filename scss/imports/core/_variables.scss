@@ -3,11 +3,7 @@ $white-cl: #fff;
 $black-cl: #000;
 $white-heavy-cl: #d6d6d6;
 $black-heavy-cl: #2e2e2e;
-// $red-cl: #fa190f;
-// $yellow-cl: #fba310;
-// $green-cl: #205463;
-// $black-sub: #545454;
-// $white-blue: #f4f6fd;
+$loading-bg: #f3f5f7;
 
 /*global text color*/
 $text-cl: #222;
@@ -17,7 +13,6 @@ $text-black-cl: #000;
 $main-bg-cl: #000;
 $black-bg-cl: #000;
 
-// timing transition
 //transition
 $t: 0.5s;
 $cubic: cubic-bezier(0.84, 0.13, 0.33, 0.97);

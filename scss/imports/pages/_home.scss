@@ -156,6 +156,7 @@ body {
               @include text(16px, ITBOLD, normal, $black-cl, none);
               margin-top: 20px;
               width: fit-content;
+              text-decoration: none;
               &_arrow {
                 width: 60px;
                 height: 60px;

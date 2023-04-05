@@ -15,22 +15,6 @@
 
 html,
 body {
-  --heightHeader: 100px;
-  // --fsSubTitle: 20px;
-  // --fsTitle: 70px;
-  // --fsContent: 25px;
-  --fs-title: 50px;
-  --fw-title: "bold";
-  --ff-title: "IT";
-  --ff-text: 'EB';
-  --fs-text: 20px;
-  --sizedWhatDoWeDoImage: 606px;
-  --leftBeforeImage: -20px;
-  --topBeforeImage: -40px;
-  --rightAfterImage: 20px;
-  --bottomAfterImage: -50px;
-  --primary-color: #000000;
-  --secondary-color: #f6f6f6;
   cursor: none;
   width: 100%;
   // height: 100vh;
@@ -92,13 +76,6 @@ body {
   }
 
   .flickity-slider {
-    height: 100%;
-    // transform: none !important;
-  }
-
-  .carousel-cell {
-    width: 100%;
-    /* full width */
     height: 100%;
   }
 
@@ -191,41 +168,26 @@ body {
 
   @include lg {
     // CSS responsive large desktop
-    --fsSubTitle: 16px;
-    --fsTitle: 50px;
-    --fsContent: 18px;
-    --sizedWhatDoWeDoImage: 500px;
-    --leftBeforeImage: 50px;
-    --topBeforeImage: -40px;
   }
 
   @include md {
     // CSS responsive desktop
-    --sizedWhatDoWeDoImage: 400px;
-    --leftBeforeImage: 100px;
-    --topBeforeImage: -40px;
-    --rightAfterImage: 100px;
-    --bottomAfterImage: -40px;
   }
 
   @include sm {
-    // CSS responsive tablet
-    // .cursor {
-    //   display: none;
-    // }
   }
 
   @include xs {
     // CSS responsive mobile
-    --sizedWhatDoWeDoImage: 250px;
-    --leftBeforeImage: 30px;
-    --topBeforeImage: -40px;
-    --rightAfterImage: 30px;
-    --bottomAfterImage: -40px;
-    --fsSubTitle: 14px;
-    --fsTitle: 40px;
-    --fsContent: 16px;
-
+    .loading-container:before{
+      height: 2px;
+    }
+    .loading-text{
+      line-height: normal;
+    }
+    .loading-text{
+      margin-bottom: 15px;
+    }
     body {
       .cursor {
         display: none;
