@@ -174,20 +174,23 @@ body {
     // CSS responsive desktop
   }
 
-  @include sm {
-  }
+  @include sm {}
 
   @include xs {
+
     // CSS responsive mobile
-    .loading-container:before{
+    .loading-container:before {
       height: 2px;
     }
-    .loading-text{
+
+    .loading-text {
       line-height: normal;
     }
-    .loading-text{
+
+    .loading-text {
       margin-bottom: 15px;
     }
+
     body {
       .cursor {
         display: none;
@@ -350,10 +353,12 @@ body {
 
           .menu {
             transform: translate(0%, -20%);
-            &-child{
+
+            &-child {
               text-align: center;
-              a{
-                &::before{
+
+              a {
+                &::before {
                   display: none;
                 }
               }
@@ -398,6 +403,40 @@ body {
 
           .footer-left {
             margin-bottom: 10px;
+          }
+        }
+      }
+
+      .profile {
+        .history {
+          margin-top: 10vh;
+          text-align: center;
+          padding-top: 0;
+          flex-wrap: wrap;
+          height: 90vh;
+          overflow: hidden;
+        }
+      }
+
+      .activeInfo {
+        .profile-content {
+          .name {
+            font-size: 34px;
+          }
+          .role p{
+            font-size: 12px;
+          }
+          .introduce p {
+            font-size: 14px;
+          }
+        }
+
+        .history {
+          .avatar {
+            height: 40vh;
+          }
+          .closeText{
+            display: none;
           }
         }
       }
