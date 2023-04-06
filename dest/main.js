@@ -121,7 +121,7 @@ $(document).ready(function () {
       );
       return false;
     });
-  }, 3000);
+  }, 6000);
 });
 function navigatePage(url) {
   window.open(url);
