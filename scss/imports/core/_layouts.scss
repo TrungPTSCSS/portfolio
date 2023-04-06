@@ -350,14 +350,15 @@ body {
           height: 60px;
           border-bottom: 1px solid #d6d6d6;
           border-left: none;
-
+          transition-delay: $t;
           .menu {
             transform: translate(0%, -20%);
 
             &-child {
               text-align: center;
-
+              margin-bottom: 20px;
               a {
+                font-size: 40px;
                 &::before {
                   display: none;
                 }
@@ -416,26 +417,32 @@ body {
           height: 90vh;
           overflow: hidden;
         }
-      }
 
-      .activeInfo {
-        .profile-content {
+        &-content {
+          .mainTitle p{
+            font-size: 34px;
+          }
           .name {
             font-size: 34px;
           }
-          .role p{
+
+          .role p {
             font-size: 12px;
           }
+
           .introduce p {
             font-size: 14px;
           }
         }
+      }
 
+      .activeInfo {
         .history {
           .avatar {
             height: 40vh;
           }
-          .closeText{
+
+          .closeText {
             display: none;
           }
         }
