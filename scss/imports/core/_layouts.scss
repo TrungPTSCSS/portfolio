@@ -15,10 +15,9 @@
 
 html,
 body {
-  cursor: none;
   width: 100%;
-  // height: 100vh;
-  overflow-y: scroll;
+  height: 100vh;
+  // overflow-y: scroll;
   -ms-overflow-style: none;
   /* IE and Edge */
   scrollbar-width: none;
@@ -35,13 +34,13 @@ body {
 
   .container {
     width: 100%;
-    padding: 0 40px;
+    padding: 0 60px;
     margin-right: auto;
     margin-left: auto;
   }
 
   .container-fluid {
-    padding: 0 55px;
+    padding: 0 60px;
 
     @include xs {
       padding-right: 15px;
@@ -59,6 +58,10 @@ body {
     margin-left: -15px;
   }
 
+  .relative{
+    position: relative;
+  }
+
   .no-gutters {
     margin-right: 0;
     margin-left: 0;
@@ -70,390 +73,53 @@ body {
     padding-left: 0;
   }
 
-  .flickity-viewport {
-    height: 100% !important;
-    width: 100% !important;
-  }
-
-  .flickity-slider {
-    height: 100%;
-  }
-
-  .menu-hidden {
-    position: absolute;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    background: $white-cl;
-    padding: 20px 20px 20px;
-    visibility: hidden;
-    transform: translateX(100%);
-    opacity: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: $t;
-    z-index: 10000;
-
-    .logo {
-      width: 150px;
-      height: 50px;
-      object-fit: cover;
-      margin: 0 auto;
-    }
-
-    .social {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding-top: 10px;
-
-      &-item {
-        width: 30px;
-        height: 30px;
-        border: black solid 2px;
-        border-radius: 50%;
-        margin: 0 5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        a {
-          width: 100%;
-          height: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
-          img {
-            width: 16px;
-            height: 16px;
-            object-fit: contain;
-            filter: invert(1);
-          }
-        }
-      }
-    }
-  }
-
   @media (min-width: $xxs-min) {
-    .container {
-      max-width: 540px;
-    }
+    // .container {
+    //   max-width: 540px;
+    // }
   }
 
   @media (min-width: $xs-min) {
-    .container {
-      max-width: 720px;
-    }
+    // .container {
+    //   max-width: 720px;
+    // }
   }
 
   @media (min-width: $sm-min) {
-    .container {
-      max-width: 960px;
-    }
+    // .container {
+    //   max-width: 960px;
+    // }
   }
 
   @media (min-width: $md-min) {
-    .container {
-      max-width: $container-width;
-    }
-  }
-
-  .mainwrapper {
-    width: 100%;
-    margin: auto;
-    @include visible;
+    // .container {
+    //   max-width: $container-width;
+    // }
   }
 
   @include lg {
     // CSS responsive large desktop
+    // .content{
+    //   @include text(18px, ITREGULAR, 18px, $white-cl, none);
+    // }
   }
 
   @include md {
     // CSS responsive desktop
+    // .content{
+    //   @include text(18px, ITREGULAR, 18px, $white-cl, none);
+    // }
   }
 
-  @include sm {}
+  @include sm {
+    // CSS responsive mobile
+    // .content{
+    //   @include text(14px, ITREGULAR, 18px, $black-cl, none);
+    // }
+  }
 
   @include xs {
-
     // CSS responsive mobile
-    .loading-container:before {
-      height: 2px;
-    }
-
-    .loading-text {
-      line-height: normal;
-    }
-
-    .loading-text {
-      margin-bottom: 15px;
-    }
-
-    body {
-      .cursor {
-        display: none;
-      }
-
-      .container {
-        padding: 0 15px;
-      }
-
-      .grid {
-        .main-body {
-          width: 100vw;
-
-          .header {
-            width: calc(100vw - 60px) !important;
-            height: 60px;
-
-            .contact {
-              display: none;
-            }
-          }
-
-          .introduce {
-            &_title {
-              width: 100%;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-
-              &-sub {
-                font-size: 5vw;
-              }
-
-              &-main {
-                font-size: 15vw;
-                padding-right: 0;
-              }
-
-              &-about {
-                margin-top: 15px;
-                padding: 10px 25px;
-                background-color: black;
-                color: white;
-                font-size: 14px;
-
-                span::before {
-                  display: none;
-                }
-              }
-            }
-
-            &_bottom {
-              flex-direction: column-reverse;
-              right: 50%;
-              transform: translateX(50%);
-              bottom: 20px;
-              &-line{
-                height: 120px;
-              }
-              &-text {
-                margin-top: 10px;
-                margin-right: 0;
-              }
-            }
-          }
-
-          .project {
-            .recent {
-              text-align: center;
-            }
-
-            .reverse {
-              flex-direction: column-reverse;
-            }
-
-            &_child {
-              padding-top: 40px;
-              border-bottom: 1px solid #d6d6d6;
-
-              .img {
-                height: 70vh;
-
-                span {
-                  font-size: 50px;
-                }
-              }
-
-              .detail {
-                align-items: center;
-                margin: 20px 0 40px;
-                flex-direction: column;
-
-                .title {
-                  font-size: 10vw;
-                }
-
-                .decrip {
-                  font-size: 14px;
-                }
-
-                .viewMore {
-                  font-size: 14px;
-                }
-              }
-
-              .viewMore {
-                padding: 10px 20px;
-                background-color: #000000;
-
-                &-text {
-                  color: white;
-                }
-
-                &_arrow {
-                  display: none;
-                }
-              }
-
-            }
-          }
-
-          .contactSection {
-            height: 100vh;
-
-            .content {
-              p {
-                font-size: 12px;
-              }
-
-              .email {
-                margin-top: 20px;
-                font-size: 22px;
-
-                &:hover {
-                  transform: scale(1);
-                }
-              }
-
-              .phone {
-                font-size: 16px;
-
-                &:hover {
-                  font-size: 16px;
-
-                }
-              }
-
-            }
-
-            .signature {
-              margin-top: 60px;
-              width: 40vw;
-            }
-          }
-        }
-
-        .navbar {
-          width: 60px;
-          height: 60px;
-          border-bottom: 1px solid #d6d6d6;
-          border-left: none;
-          transition-delay: $t;
-          .menu {
-            transform: translate(0%, -20%);
-
-            &-child {
-              text-align: center;
-              margin-bottom: 20px;
-              a {
-                font-size: 40px;
-                &::before {
-                  display: none;
-                }
-              }
-            }
-          }
-
-          .button {
-            position: absolute;
-            right: 15px;
-            top: 15px;
-
-            .title {
-              display: none;
-            }
-
-            .hamburger {
-              width: 30px;
-              height: 30px;
-            }
-          }
-        }
-
-        .active {
-          width: 100vw;
-          height: 100vh;
-          transition: $t;
-
-          .menu {
-            transform: translate(0%, -50%);
-          }
-
-          .button {
-            position: absolute;
-            right: 15px;
-            top: 15px;
-          }
-        }
-
-        footer {
-          flex-direction: column;
-          padding: 15px !important;
-
-          .footer-left {
-            margin-bottom: 10px;
-          }
-        }
-      }
-
-      .profile {
-        .history {
-          margin-top: 10vh;
-          text-align: center;
-          padding-top: 0;
-          flex-wrap: wrap;
-          height: 90vh;
-          overflow: hidden;
-        }
-
-        &-content {
-          .mainTitle p{
-            font-size: 34px;
-          }
-          .name {
-            font-size: 34px;
-          }
-
-          .role p {
-            font-size: 12px;
-          }
-
-          .introduce p {
-            font-size: 14px;
-          }
-        }
-      }
-
-      .activeInfo {
-        .history {
-          .avatar {
-            height: 40vh;
-          }
-
-          .closeText {
-            display: none;
-          }
-        }
-      }
-    }
-
-    .activeHeader {
-      background-color: white !important;
-    }
   }
 
   @include xxs {

@@ -1,5 +1,5 @@
 {
-  "name": "portfolio",
+  "name": "larvadev",
   "version": "1.0.0",
   "description": "This is grunt template project for training",
   "main": "index.js",
@@ -15,14 +15,14 @@
     "grunt": "^1.6.1",
     "grunt-browser-sync": "^2.2.0",
     "grunt-contrib-cssmin": "^3.0.0",
-    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-sass": "^2.0.0",
     "grunt-contrib-uglify": "^5.0.0",
     "grunt-contrib-watch": "^1.1.0",
     "load-grunt-tasks": "^5.1.0"
   },
   "dependencies": {
     "grunt-sass": "^3.1.0",
-    "node-sass": "^7.0.1",
+    "node-sass": "^9.0.0",
     "sass": "^1.53.0"
   }
 }
