@@ -1,319 +1,534 @@
 body {
-  .main {
-    background-color: $main-bg-cl;
-    overflow-x: hidden;
-
-    .section_1 {
-      position: relative;
-      overflow: hidden;
-
-      img {
-        @include midimg();
+  // background: linear-gradient(to bottom, orange, darkblue);
+  .grid {
+    display: flex;
+    background-color: #f8f8f8;
+    .main-body {
+      width: calc(100vw - 245px);
+      .container {
+        transform: translateY(0);
+        @include transition(1s);
       }
-
-      .information {
-        width: 80%;
-        position: absolute;
-        z-index: 2;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: $white-cl;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
+      .introduce {
+        align-items: flex-start;
+        position: relative;
         &_title {
-          letter-spacing: normal;
-
-          &.splitting {
-            opacity: 1;
-
-            .char {
-              animation: slide-in 0.8s cubic-bezier(.5, 0, .5, 1) both;
-              animation-delay: min(calc(50ms * var(--char-index)), 1s);
-            }
+          margin-top: 20px;
+          &-sub {
+            @include text(2vw, ITBOLD, normal, $black-cl, uppercase);
+            letter-spacing: -0.05rem;
           }
-        }
-
-        &_content {
-          max-width: 80%;
-          margin: 18px auto 40px;
-          line-height: 20px;
-        }
-      }
-
-      .scroll_more {
-        position: absolute;
-        bottom: 114px;
-        right: -14px;
-        z-index: 2;
-        transform: rotate(90deg);
-
-        &-wrapper {
-          display: flex;
-          align-items: center;
-        }
-
-        &-text {
-          @include text(16px, ITREGULAR, 16px, $white-cl, none);
-          margin-right: 20px;
-        }
-
-        &-icon {
-          display: flex;
-          align-items: center;
-
-          span {
-            display: block;
-            width: 10px;
-            height: 10px;
-            border-right: 2px solid $white-cl;
-            border-bottom: 2px solid $white-cl;
-            transform: rotate(-45deg);
-            animation: change-color 1.3s alternate infinite;
-
-            &:nth-child(1) {
-              animation-delay: 100ms;
-            }
-
-            &:nth-child(2) {
-              animation-delay: 300ms;
-            }
-
-            &:nth-child(3) {
-              animation-delay: 500ms;
-            }
-
-            &:nth-child(4) {
-              animation-delay: 700ms;
-            }
-
-            &:nth-child(5) {
-              animation-delay: 900ms;
-            }
-          }
-        }
-      }
-
-    }
-
-    .section_2 {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding-top: 60px;
-
-      .section {
-        &_description {
-          margin-bottom: 46px;
-        }
-      }
-
-      .relative-3 {
-        position: relative;
-        z-index: 3;
-      }
-
-      .relative {
-        z-index: 2;
-      }
-
-      .about_us-img {
-        height: 500px;
-        position: relative;
-        overflow: hidden;
-        border-radius: $radius;
-
-        img {
-          @include midimg();
-        }
-      }
-
-      .ball {
-        content: '';
-        position: absolute;
-        width: 1200px;
-        height: 600px;
-        border-radius: 100%;
-        filter: blur(60px);
-        z-index: 1;
-
-        &.purple {
-          top: -100px;
-          left: 0;
-          transform: translateX(-40%);
-          background: radial-gradient(circle,
-              #BB15B6 100%,
-              rgba(0, 5, 3, 0) 0%);
-        }
-      }
-    }
-
-    .section_3 {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-
-      .services_content {
-        margin-bottom: 46px;
-        position: relative;
-        z-index: 2;
-      }
-
-      .section {
-        &_title {
-          text-align: center;
-        }
-
-        &_description {
-          text-align: center;
-        }
-      }
-
-      .services_all {
-        position: relative;
-
-        .col-md-4 {
-          z-index: 2;
-        }
-
-        .ball {
-          content: '';
-          position: absolute;
-          width: 600px;
-          height: 600px;
-          border-radius: 100%;
-          z-index: 1;
-          filter: blur(80px);
-
-          &.blue {
-            left: -300px;
-            background: radial-gradient(circle,
-                #1541BB 100%,
-                rgba(0, 5, 3, 0) 0%);
-          }
-
-          &.purple {
-            top: -100px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: radial-gradient(circle,
-                #BB15B6 100%,
-                rgba(0, 5, 3, 0) 0%);
-          }
-
-          &.yellow {
-            right: -300px;
-            background: radial-gradient(circle,
-                #ffc700 100%,
-                rgba(0, 5, 3, 0) 0%);
-          }
-        }
-      }
-    }
-
-    .section_4 {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-
-      .contact_form {
-        position: relative;
-
-        .ball {
-          content: '';
-          position: absolute;
-          width: 1200px;
-          height: 600px;
-          border-radius: 100%;
-          z-index: 1;
-          filter: blur(80px);
-          z-index: -1;
-
-          &.blue {
-            top: -50px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: radial-gradient(circle,
-                #157EBB 100%,
-                rgba(0, 5, 3, 0) 0%);
-          }
-        }
-      }
-    }
-
-    .splitting {
-      overflow: hidden;
-    }
-
-    .section {
-      &_title {
-        margin-bottom: 18px;
-        opacity: 0;
-
-        &.splitting {
-          opacity: 1;
-
-          .char {
-            animation: slide-in 0.8s cubic-bezier(.5, 0, .5, 1) both;
-            animation-delay: min(calc(50ms * var(--char-index)), 1s);
-          }
-        }
-      }
-
-      &_description {
-        margin-bottom: 30px;
-        opacity: 0;
-
-        &.splitting {
-          opacity: 1;
-
-          .word {
+          &-main {
             overflow: hidden;
+            padding-right: 20px;
+            @include text(8vw, ITBLACK, normal, $black-cl, uppercase);
+            position: relative;
+            &::before {
+              position: absolute;
+              content: "";
+              background: $black-cl;
+              width: 100%;
+              height: 5px;
+              bottom: 0;
+              left: 0;
+              transform: translateX(-101%);
+              @include transition(0.3s cubic-bezier(0.65, 0.05, 0.36, 1) 0.2s);
+            }
+            &:hover {
+              &::before {
+                transform: translateX(0%);
+                @include transition(
+                  0.3s cubic-bezier(0.65, 0.05, 0.36, 1) 0.2s
+                );
+              }
+            }
+          }
+          &-about {
+            margin-top: 20px;
+            text-align: right;
+            @include text(18px, ITREGULAR, normal, $black-cl, normal);
+            overflow: hidden;
+            span {
+              position: relative;
+              &::before {
+                position: absolute;
+                content: "";
+                background: $black-cl;
+                width: 100%;
+                height: 1px;
+                bottom: 0;
+                right: 0;
+                transform: translateX(101%);
+                @include transition(
+                  0.3s cubic-bezier(0.65, 0.05, 0.36, 1) 0.2s
+                );
+              }
+            }
+            &:hover {
+              span::before {
+                transform: translateX(0%);
+                @include transition(
+                  0.3s cubic-bezier(0.65, 0.05, 0.36, 1) 0.2s
+                );
+              }
+            }
+          }
+        }
+        &_bottom {
+          position: absolute;
+          right: 0;
+          bottom: 40px;
+          display: flex;
+          align-items: center;
+          &-text {
+            @include text(14px, ITBLACK, normal, $black-cl, none);
+            margin-right: 20px;
+          }
+          &-line {
+            width: 3px;
+            height: 100px;
+            background: transparent;
+            position: relative;
+            overflow: hidden;
+            &::before {
+              position: absolute;
+              width: 100%;
+              content: "";
+              background: $black-cl;
+              animation: scroll 2s ease 1s infinite forwards;
+            }
+          }
+        }
+      }
+      .project {
+        height: max-content;
+        .recent {
+          text-align: right;
+          margin: 20px 0 0;
+          @include text(25px, ITBOLD, normal, unset, none);
+        }
+        .recent-reverse{
+          text-align: left;
+        }
+        .reverse {
+          .img span {
+            left: 20px;
+            right: unset;
+          }
+        }
+        &_child {
+          padding-top: 40px;
+          .img {
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            cursor: none;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+            span {
+              position: absolute;
+              bottom: 10px;
+              right: 20px;
+              content: "";
+              color: $white-cl;
+              @include text(150px, ITBOLD, normal, $white-cl, none);
+            }
+          }
+          .detail {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .title {
+              cursor: none;
+              @include text(6vw, ITBOLD, normal, $black-cl, none);
+            }
+            .decrip {
+              @include text(18px, ITREGULAR, normal, $black-cl, none);
+              margin-top: 10px;
+              width: fit-content;
+            }
+            .viewMore {
+              justify-content: flex-start;
+              cursor: none;
+              @include text(16px, ITBOLD, normal, $black-cl, none);
+              margin-top: 20px;
+              width: fit-content;
+              text-decoration: none;
+              &_arrow {
+                width: 60px;
+                height: 60px;
+                border: 1px solid black;
+                border-radius: 100%;
+                position: relative;
+                margin-left: 20px;
+                img {
+                  @include mid();
+                }
+              }
+            }
+          }
+          .reverse {
+            text-align: right;
+            align-items: flex-end;
+            .viewMore {
+              justify-content: flex-end;
+            }
+          }
+          .viewMore {
+            .viewMore_arrow {
+              transform: translateX(0px);
+              @include transition($t);
+            }
+            &:hover {
+              .viewMore_arrow {
+                transform: translateX(10px);
+                @include transition($t);
+              }
+            }
+          }
+        }
+        .content {
+          background: transparent;
+          /* width */
+          &::-webkit-scrollbar {
+            display: none;
           }
 
-          .char {
-            animation: slide-in_section2 .6s cubic-bezier(.5, 0, .5, 1) both;
-            animation-delay: calc(3ms * var(--char-index) + 500ms);
+          /* Track */
+          &::-webkit-scrollbar-track {
+            display: none;
+          }
+
+          /* Handle */
+          &::-webkit-scrollbar-thumb {
+            display: none;
+          }
+
+          /* Handle on hover */
+          &::-webkit-scrollbar-thumb:hover {
+            display: none;
+          }
+        }
+      }
+      .contactSection {
+        height: 80vh;
+        .img {
+          width: 80px;
+          height: 80px;
+          border-radius: 100%;
+          overflow: hidden;
+          margin-bottom: 15px;
+          margin-top: 15vh;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        .content {
+          text-align: center;
+          p {
+            @include text(18px, ITREGULAR, normal, $black-cl, none);
+          }
+          .email {
+            margin-top: 10px;
+            cursor: none;
+            @include text(50px, ITBLACK, normal, $black-cl, none);
+            position: relative;
+            overflow: hidden;
+            transform: scale(1);
+            @include transition($t);
+            &::before {
+              position: absolute;
+              bottom: 0;
+              content: "";
+              width: 100%;
+              height: 5px;
+              background-color: $black-cl;
+              transform: translateX(-101%);
+              @include transition(0.3s cubic-bezier(0.65, 0.05, 0.36, 1) 0.2s);
+            }
+            &:hover {
+              transform: scale(1.2);
+              &::before {
+                transform: translateX(0%);
+                @include transition(
+                  0.3s cubic-bezier(0.65, 0.05, 0.36, 1) 0.2s
+                );
+              }
+            }
+          }
+          .phone {
+            margin-top: 20px;
+            text-decoration: none;
+            @include text(18px, ITBOLD, 20px, $black-cl, none);
+            @include transition($t);
+            cursor: none;
+            &:hover {
+              font-size: 22px;
+            }
+          }
+        }
+        .signature {
+          margin-top: 25px;
+          width: 20%;
+          height: 15vh;
+          svg {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            path {
+              stroke-dasharray: 938.6611328125px;
+              stroke-dashoffset: 938.6611328125px;
+              fill: none;
+              stroke: #000;
+              stroke-width: 2;
+            }
           }
         }
       }
     }
   }
-}
-
-@include xs {
-  body {
-    .container {
-      padding: 0 20px;
+  .profile {
+    position: fixed;
+    background-color: $black-cl;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    transform: translateY(100%);
+    @include transition(0.4s cubic-bezier(.5,.29,.4,.55));
+    transition-delay: 1s;
+    &-content {
+      p {
+        opacity: 0;
+        transform: translateX(100%);
+        @include text(16px, ITREGULAR, normal, $white-cl, none);
+        transition: $t;
+        transition-delay: 0.7s;
+      }
+      .hello {
+        p {
+          @include text(25px, ITBOLD, normal, $white-cl, none);
+        }
+      }
+      .mainTitle {
+        p {
+          @include text(50px, ITBOLD, normal, $white-cl, none);
+        }
+      }
+      .role {
+        padding: 10px 0;
+        p {
+          @include text(14px, ITBOLD, normal, $white-heavy-cl, none);
+        }
+      }
+      .introduce {
+        p {
+          @include text(16px, ITREGULAR, 30px, $white-cl, none);
+        }
+      }
+    }
+    .history {
+      height: 100vh;
+      padding: 100px 0;
+      overflow: hidden;
+      flex-wrap: nowrap;
+      align-items: center;
+      position: relative;
+      .avatar {
+        opacity: 0;
+        height: 80vh;
+        transform: translateX(-100%);
+        @include transition($t);
+        transition-delay: 0.7s;
+        overflow: hidden;
+        img {
+          min-width: 100%;
+          min-height: 100%;
+          object-fit: cover;
+        }
+        &::before{
+          position: absolute;
+          content: '';
+          background: linear-gradient(270deg, #000000 0%, rgba(0, 0, 0, 0) 48.96%);
+          z-index: 1;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+        }
+      }
+      .button {
+        position: absolute;
+        bottom: -100px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 60px;
+        padding: 20px;
+        border-radius: 100%;
+        border: 1px solid $white-cl;
+        transition: $t;
+        transition-delay: 0.5s;
+        .close {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          span {
+            position: absolute;
+            content: "";
+            background: $white-cl;
+            width: 100%;
+            height: 1px;
+            top: 50%;
+            left: 0;
+            &:nth-child(1) {
+              transform: rotate(45deg);
+            }
+            &:nth-child(2) {
+              transform: rotate(-45deg);
+            }
+          }
+        }
+      }
+      .closeText {
+        position: absolute;
+        bottom: -100px;
+        left: 20px;
+        transition: $t;
+        @include text(14px, ITBOLD, normal, $white-cl, uppercase);
+      }
     }
   }
-}
-
-@keyframes slide-in {
-  from {
-    transform: translateY(100px);
-    transform-origin: left;
-    opacity: 0;
+  .activeInfo {
+    transform: translateY(0%);
+    @include transition(0.4s cubic-bezier(.5,.29,.4,.55));
+    .profile {
+      &-content {
+        p {
+          opacity: 1;
+          transform: translateX(0%);
+          transition-delay: $t;
+        }
+      }
+    }
+    .history {
+      .avatar {
+        opacity: 1;
+        transform: translateX(0%);
+        @include transition($t);
+        transition-delay: $t;
+        position: relative;
+      }
+      .button {
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 60px;
+        padding: 20px;
+        border-radius: 100%;
+        border: 1px solid $white-cl;
+        transition: $t;
+        transition-delay: 1s;
+        .close {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          span {
+            position: absolute;
+            content: "";
+            background: $white-cl;
+            width: 100%;
+            height: 1px;
+            top: 50%;
+            &:nth-child(1) {
+              transform: rotate(45deg);
+            }
+            &:nth-child(2) {
+              transform: rotate(-45deg);
+            }
+          }
+        }
+      }
+      .closeText {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        transition: $t;
+        transition-delay: 1.2s;
+        @include text(14px, ITBOLD, normal, $white-cl, uppercase);
+      }
+    }
+  }
+  .nav {
+    &__link {
+      font-size: 5rem;
+      color: #fff;
+      display: grid;
+      &--text {
+        grid-area: 1/1;
+        transition: opacity 0.6s cubic-bezier(0.445, 0.05, 0.55, 0.95),
+          transform 0.6s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+        .word {
+          white-space: nowrap;
+        }
+        .char {
+          display: inline-block;
+          transform-origin: 50% 50% 0.4em;
+          transition: transform 0.8s cubic-bezier(0.5, 0, 0, 1);
+          transition-delay: calc(0ms + var(--char-index) * 25ms);
+          backface-visibility: hidden;
+          margin: 0 -0.02em;
+        }
+        &::after {
+          opacity: 1;
+        }
+        &:nth-child(2) {
+          opacity: 0;
+          .char {
+            transform: rotateX(90deg) rotateY(-45deg);
+          }
+        }
+      }
+      &:hover {
+        .nav__link--text {
+          transform: translateX(var(--link-translate-x));
+          &:nth-child(1) {
+            opacity: 0;
+            .char {
+              transform: rotateX(-90deg) rotateY(-27deg);
+            }
+          }
+          &:nth-child(2) {
+            opacity: 1;
+            .char {
+              transform: rotate(0);
+            }
+          }
+        }
+      }
+    }
+  }
+  .animation-text {
+    animation: signature 3s ease forwards;
+    animation-delay: 2.150s;
   }
 }
-
-@keyframes slide-in_section2 {
-  from {
-    transform: translateY(20px);
-    transform-origin: bottom;
-    opacity: 0;
-  }
-}
-
-@keyframes change-color {
+@keyframes scroll {
   0% {
-    opacity: 20%;
+    height: 0%;
+    transform: translateY(0%);
   }
-
   100% {
-    opacity: 100%;
+    height: 120%;
+    transform: translateY(100%);
   }
 }

@@ -15,6 +15,12 @@
 @mixin sm {
   @media screen and (max-width: $sm-max) {
     @content;
+    section .title-sub {
+      margin-left: 0;
+      &::before {
+        display: none;
+      }
+    }
   }
 }
 // mobile
@@ -130,9 +136,7 @@
   line-height: $line-height;
   color: $color;
   text-transform: $text-transform;
-  letter-spacing: calc($font-size * (-4 / 100))
 }
-
 @mixin subTitle($left: true) {
   @if $left == true {
     position: relative;

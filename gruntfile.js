@@ -11,6 +11,7 @@ module.exports = (grunt) => {
       scss: 'scss',
       js: 'js',
     },
+
     // minify / uglify js
     uglify: {
       my_target: {
@@ -36,6 +37,7 @@ module.exports = (grunt) => {
         options: {
           style: 'compressed',
           sourcemap: false,
+          lineNumbers: true,
         },
         files: {
           '<%= dirs.dest %>/style.min.css': '<%= dirs.scss %>/style.scss',
